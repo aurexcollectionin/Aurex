@@ -27,12 +27,12 @@ section{padding:64px 0;border-top:1px solid var(--line)}.heading{text-align:cent
 <div class="cartbar"><button class="goldbtn" onclick="showCart()">VIEW CART · <span id="cartCount2">0</span></button></div>
 <script>
 const seed=[
-{id:'purse',name:'Ladies Purse',category:'Women',price:599,stock:10,image:'product/product-purse.jpg'},
-{id:'watch',name:'Premium Watch',category:'Watches',price:2500,stock:10,image:'product/product-watch.jpg'},
-{id:'perfume1',name:'Black X Perfume',category:'Perfumes',price:599,stock:10,image:'product/product-perfume-1.jpg'},
-{id:'perfume2',name:'Perfume Collection',category:'Perfumes',price:599,stock:9,image:'product/product-perfume-2.jpg'},
-{id:'anklet1',name:'Anklet – Design 1',category:'Jewellery',price:399,stock:3,image:'product/product-anklet-1.jpg'},
-{id:'anklet2',name:'Anklet – Design 2',category:'Jewellery',price:399,stock:3,image:'product/product-anklet-2.jpg'}
+{id:'purse',name:'Ladies Purse',category:'Women',price:599,stock:10,image:'product-purse.jpg'},
+{id:'watch',name:'Premium Watch',category:'Watches',price:2500,stock:10,image:'product-watch.jpg'},
+{id:'perfume1',name:'Black X Perfume',category:'Perfumes',price:599,stock:10,image:'product-perfume-1.jpg'},
+{id:'perfume2',name:'Perfume Collection',category:'Perfumes',price:599,stock:9,image:'product-perfume-2.jpg'},
+{id:'anklet1',name:'Anklet – Design 1',category:'Jewellery',price:399,stock:3,image:'product-anklet-1.jpg'},
+{id:'anklet2',name:'Anklet – Design 2',category:'Jewellery',price:399,stock:3,image:'product-anklet-2.jpg'}
 ];
 let products=JSON.parse(localStorage.getItem('aurexProducts')||'null')||seed;
 let cart=[];
