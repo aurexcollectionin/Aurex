@@ -423,6 +423,43 @@ animation:none!important;
 transition:none!important
 }
 }
+#orderChoice{
+position:fixed;
+inset:0;
+z-index:9999;
+background:#09090b;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:22px;
+}
+
+.order-box{
+width:100%;
+max-width:480px;
+border:1px solid #742039;
+background:#141116;
+padding:30px;
+text-align:center;
+}
+
+.order-box h2{
+font:32px Georgia,serif;
+color:#e6a4b6;
+}
+
+.order-option{
+width:100%;
+padding:17px;
+margin-top:15px;
+font-size:13px;
+}
+
+.order-close{
+position:absolute;
+top:20px;
+right:20px;
+}  
 </style>
 </head>
 
@@ -658,7 +695,32 @@ Save display settings
 VIEW CART · <span id="cartCount2">0</span>
 </button>
 </div>
+<div id="orderChoice" class="hidden">
 
+<button class="outline order-close" onclick="closeOrder()">CLOSE ✕</button>
+
+<div class="order-box">
+
+<div class="eyebrow">AUREX · ELITE COLLECTION</div>
+
+<h2>Choose Your Order Method</h2>
+
+<p id="orderProduct"></p>
+<p id="orderPrice" class="price"></p>
+
+<button id="whatsappOrder" class="btn order-option">
+ORDER ON WHATSAPP
+</button>
+
+<button class="outline order-option"
+onclick="alert('Website ordering with OTP verification is coming soon.')">
+ORDER ON WEBSITE
+</button>
+
+<p class="stock">THE PREMIUM VIBE</p>
+
+</div>
+</div>
 <script>
 
 const seed=[
@@ -758,6 +820,31 @@ updateCount()
 }
 
 function buyNow(id){
+
+const p=products.find(x=>x.id===id);
+if(!p||p.stock<1)return alert('Out of stock');
+
+const message=`Hello AUREX! I want to order:
+
+Product: ${p.name}
+Price: ${money(p.price)}
+
+Please confirm availability.`;
+
+document.getElementById('orderProduct').textContent=p.name;
+document.getElementById('orderPrice').textContent=money(p.price);
+
+document.getElementById('whatsappOrder').onclick=()=>{
+window.location.href=
+'https://wa.me/919138311341?text='+encodeURIComponent(message);
+};
+
+document.getElementById('orderChoice').classList.remove('hidden');
+}
+
+function closeOrder(){
+document.getElementById('orderChoice').classList.add('hidden');
+}
 addCart(id);
 showCart()
 }
