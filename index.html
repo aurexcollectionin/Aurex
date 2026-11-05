@@ -789,6 +789,51 @@ if(!phone)return;
 const address=prompt('Full delivery address with PIN code');
 if(!address)return;
 
+const pay=prompt('Payment method: COD','COD');
+if(!pay)return;
+
+const subtotal=cart.reduce((s,x)=>
+s+products.find(p=>p.id===x.id).price*x.qty,0);
+
+const distance=Number(prompt('Distance from Karnal in km','50'));
+
+const shipping=distance<=80?100:distance<=500?200:250;
+
+const total=subtotal+shipping;
+
+const items=cart.map(x=>{
+const p=products.find(y=>y.id===x.id);
+return `${p.name} x ${x.qty} = ${money(p.price*x.qty)}`;
+}).join('\n');
+
+const message=
+`NEW AUREX ORDER
+Customer: ${name}
+Mobile: ${phone}
+Address: ${address}
+Products:
+${items}
+Subtotal: ${money(subtotal)}
+Delivery: ${money(shipping)}
+Total: ${money(total)}
+Payment: ${pay}`;
+
+window.open(
+'https://wa.me/919138311341?text='+encodeURIComponent(message),
+'_blank'
+);
+
+}
+
+const name=prompt('Customer name');
+if(!name)return;
+
+const phone=prompt('Mobile number');
+if(!phone)return;
+
+const address=prompt('Full delivery address with PIN code');
+if(!address)return;
+
 const pay=prompt('Demo payment method: type COD','COD');
 if(!pay)return;
 
