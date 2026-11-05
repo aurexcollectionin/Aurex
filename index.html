@@ -20,389 +20,161 @@
 --muted:#aaa1a7;
 --line:#48202d;
 }
-
 *{box-sizing:border-box}
-body{
-margin:0;
-background:var(--bg);
-color:var(--ink);
-font:15px Arial,sans-serif
-}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px Arial,sans-serif}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 .wrap{width:min(1160px,calc(100% - 32px));margin:auto}
 
 .top{
-padding:9px;
-text-align:center;
-color:#d5cbd0;
-letter-spacing:3px;
-font-size:10px;
-border-bottom:1px solid var(--line)
+padding:9px;text-align:center;color:#d5cbd0;
+letter-spacing:3px;font-size:10px;border-bottom:1px solid var(--line)
 }
-
 header{
-position:sticky;
-top:0;
-background:#09090bf2;
-backdrop-filter:blur(10px);
-z-index:5;
-border-bottom:1px solid var(--line)
+position:sticky;top:0;background:#09090bf2;
+backdrop-filter:blur(10px);z-index:5;border-bottom:1px solid var(--line)
 }
-
 .nav{
-height:76px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:16px
+height:76px;display:flex;align-items:center;
+justify-content:space-between;gap:16px
 }
-
-.logo{
-font:26px Georgia,serif;
-letter-spacing:7px;
-color:#eee9ec
-}
-
+.logo{font:26px Georgia,serif;letter-spacing:7px;color:#eee9ec}
 .logo small{
-display:block;
-text-align:center;
-font:9px Arial;
-letter-spacing:4px;
-color:#c9aeb8
+display:block;text-align:center;font:9px Arial;
+letter-spacing:4px;color:#c9aeb8
 }
-
-nav{
-display:flex;
-gap:22px;
-font-size:11px;
-letter-spacing:1px
-}
-
+nav{display:flex;gap:22px;font-size:11px;letter-spacing:1px}
 nav a:hover{color:#d46a87}
 
-/* ANIMATED WINE RED FIRE BUTTONS */
-
 .btn,.outline,.tiny{
-position:relative;
-isolation:isolate;
-overflow:hidden;
-border:1px solid #742039;
-padding:12px 18px;
+position:relative;isolation:isolate;overflow:hidden;
+border:1px solid #742039;padding:12px 18px;
 background:linear-gradient(110deg,#17070d,#4a0d20 55%,#210811);
-color:#f4e9ed;
-letter-spacing:1px;
-font-size:11px;
-text-transform:uppercase;
-box-shadow:0 0 13px #650f2b44,inset 0 0 12px #8b1e3b22;
+color:#f4e9ed;letter-spacing:1px;font-size:11px;
+text-transform:uppercase;box-shadow:0 0 13px #650f2b44,inset 0 0 12px #8b1e3b22;
 transition:.2s
 }
-
 .btn:before,.outline:before,.tiny:before{
-content:"";
-position:absolute;
-z-index:-1;
-inset:-60% -30%;
-background:linear-gradient(
-100deg,
-transparent 35%,
-#8b1e3b55 45%,
-#c13c5c66 50%,
-#5c1028aa 55%,
-transparent 68%
-);
-filter:blur(9px);
-transform:translateX(-45%) skewX(-18deg);
+content:"";position:absolute;z-index:-1;inset:-60% -30%;
+background:linear-gradient(100deg,transparent 35%,#8b1e3b55 45%,#c13c5c66 50%,#5c1028aa 55%,transparent 68%);
+filter:blur(9px);transform:translateX(-45%) skewX(-18deg);
 animation:flameFlow 2.8s ease-in-out infinite alternate
 }
-
 .btn:after,.outline:after,.tiny:after{
-content:"";
-position:absolute;
-z-index:-1;
-inset:0;
-background:
-radial-gradient(ellipse at 20% 110%,#a3224566,transparent 55%),
-radial-gradient(ellipse at 85% -20%,#74142e66,transparent 48%);
+content:"";position:absolute;z-index:-1;inset:0;
+background:radial-gradient(ellipse at 20% 110%,#a3224566,transparent 55%),radial-gradient(ellipse at 85% -20%,#74142e66,transparent 48%);
 animation:flamePulse 1.9s ease-in-out infinite alternate
 }
-
 .btn:hover,.outline:hover,.tiny:hover{
-border-color:#bd4968;
-box-shadow:0 0 22px #9b1d4166,inset 0 0 18px #8b1e3b55;
+border-color:#bd4968;box-shadow:0 0 22px #9b1d4166,inset 0 0 18px #8b1e3b55;
 transform:translateY(-1px)
 }
-
 @keyframes flameFlow{
 0%{transform:translateX(-55%) skewX(-18deg) scaleY(.8)}
 100%{transform:translateX(55%) skewX(18deg) scaleY(1.25)}
 }
-
-@keyframes flamePulse{
-0%{opacity:.45}
-100%{opacity:1}
-}
-
-.btn:disabled{
-opacity:.4;
-cursor:not-allowed
-}
+@keyframes flamePulse{0%{opacity:.45}100%{opacity:1}}
+.btn:disabled{opacity:.4;cursor:not-allowed}
 
 .hero{
-padding:72px 0;
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-gap:36px
+padding:72px 0;display:grid;grid-template-columns:1fr 1fr;
+align-items:center;gap:36px
 }
-
-.eyebrow{
-color:#b94b69;
-font-size:10px;
-letter-spacing:4px;
-text-transform:uppercase
-}
-
-.hero h1{
-font:clamp(46px,6vw,78px)/1.02 Georgia,serif;
-font-weight:400;
-margin:18px 0
-}
-
-.hero h1 em{
-color:#c34b6c;
-font-style:normal
-}
-
-.hero p{
-color:var(--muted);
-line-height:1.8;
-max-width:480px
-}
-
+.eyebrow{color:#b94b69;font-size:10px;letter-spacing:4px;text-transform:uppercase}
+.hero h1{font:clamp(46px,6vw,78px)/1.02 Georgia,serif;font-weight:400;margin:18px 0}
+.hero h1 em{color:#c34b6c;font-style:normal}
+.hero p{color:var(--muted);line-height:1.8;max-width:480px}
 .heroart{
-height:420px;
-border:1px solid #5b1a30;
-display:grid;
-place-items:center;
-background:radial-gradient(
-ellipse,#4b1024 0%,#210b14 43%,#0b090c 78%
-)
+height:420px;border:1px solid #5b1a30;display:grid;place-items:center;
+background:radial-gradient(ellipse,#4b1024 0%,#210b14 43%,#0b090c 78%)
 }
-
 .monogram{
-font:italic 190px Georgia;
-color:#a52b4d88;
-border:1px solid #a52b4d66;
-border-radius:50%;
-width:290px;
-height:290px;
-display:grid;
-place-items:center
+font:italic 190px Georgia;color:#a52b4d88;border:1px solid #a52b4d66;
+border-radius:50%;width:290px;height:290px;display:grid;place-items:center
 }
-
-section{
-padding:60px 0;
-border-top:1px solid var(--line)
-}
-
-.heading{
-text-align:center;
-margin-bottom:32px
-}
-
-.heading h2{
-font:40px Georgia,serif;
-font-weight:400;
-margin:12px
-}
-
+section{padding:60px 0;border-top:1px solid var(--line)}
+.heading{text-align:center;margin-bottom:32px}
+.heading h2{font:40px Georgia,serif;font-weight:400;margin:12px}
 .heading p{color:var(--muted)}
-.filters{
-display:flex;
-gap:9px;
-justify-content:center;
-flex-wrap:wrap;
-margin-bottom:26px
-}
-
-.filter{
-background:transparent;
-border:1px solid var(--line);
-color:var(--muted);
-padding:9px 15px
-}
-
-.filter.active{
-border-color:#a52b4d;
-color:#e6a4b6
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
-}
-
-.product{
-background:var(--panel);
-border:1px solid var(--line);
-overflow:hidden
-}
-
-.product img{
-width:100%;
-height:270px;
-object-fit:cover;
-background:#21141a;
-display:block
-}
-
+.filters{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.filter{background:transparent;border:1px solid var(--line);color:var(--muted);padding:9px 15px}
+.filter.active{border-color:#a52b4d;color:#e6a4b6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product{background:var(--panel);border:1px solid var(--line);overflow:hidden}
+.product img{width:100%;height:270px;object-fit:cover;background:#21141a;display:block}
 .pbody{padding:17px}
-
-.pbody h3{
-font:22px Georgia,serif;
-font-weight:400;
-margin:0 0 8px
-}
-
-.price{
-color:#e0a2b4;
-font-size:18px;
-margin:8px 0
-}
-
-.stock{
-font-size:11px;
-color:var(--muted)
-}
-
-.pactions{
-display:flex;
-gap:8px;
-margin-top:14px
-}
-
+.pbody h3{font:22px Georgia,serif;font-weight:400;margin:0 0 8px}
+.price{color:#e0a2b4;font-size:18px;margin:8px 0}
+.stock{font-size:11px;color:var(--muted)}
+.pactions{display:flex;gap:8px;margin-top:14px}
 .pactions button{flex:1}
-
-.cartbar{
-position:fixed;
-bottom:16px;
-right:16px;
-z-index:7;
-box-shadow:0 5px 25px #0008
-}
-
-.panel{
-background:var(--panel);
-border:1px solid var(--line);
-padding:22px;
-margin:18px 0
-}
-
+.cartbar{position:fixed;bottom:16px;right:16px;z-index:7;box-shadow:0 5px 25px #0008}
+.panel{background:var(--panel);border:1px solid var(--line);padding:22px;margin:18px 0}
 .hidden{display:none!important}
-
-.formgrid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px
-}
-
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 input,select,textarea{
-width:100%;
-padding:12px;
-background:#0d0a0d;
-border:1px solid var(--line);
-color:var(--ink);
-margin-top:6px
+width:100%;padding:12px;background:#0d0a0d;
+border:1px solid var(--line);color:var(--ink);margin-top:6px
 }
-
-label{
-font-size:12px;
-color:var(--muted)
-}
-
+label{font-size:12px;color:var(--muted)}
 .wide{grid-column:1/-1}
-
-.total{
-font-size:20px;
-color:#e0a2b4
-}
-
+.total{font-size:20px;color:#e0a2b4}
 footer{
-padding:35px 0;
-color:var(--muted);
-font-size:12px;
-display:flex;
-justify-content:space-between;
-gap:20px;
-flex-wrap:wrap
+padding:35px 0;color:var(--muted);font-size:12px;
+display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap
 }
-
-.admin table{
-width:100%;
-border-collapse:collapse;
-font-size:12px
-}
-
-.admin td,.admin th{
-padding:9px;
-border-bottom:1px solid var(--line);
-text-align:left
-}
-
+.admin table{width:100%;border-collapse:collapse;font-size:12px}
+.admin td,.admin th{padding:9px;border-bottom:1px solid var(--line);text-align:left}
 .notice{
-background:#210d15;
-border:1px solid #742039;
-padding:12px;
-color:#e2b7c3;
-font-size:12px;
-line-height:1.6
+background:#210d15;border:1px solid #742039;padding:12px;
+color:#e2b7c3;font-size:12px;line-height:1.6
 }
+.admin-card{border:1px solid var(--line);padding:15px;margin:14px 0;background:#100c10}
+.owner-link{font-size:10px;color:#8e7b83;letter-spacing:1px;border:1px solid #48202d;padding:8px 10px;background:#110b0f}
 
-.admin-actions{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-margin:12px 0
+/* FULL SCREEN ORDER WINDOWS */
+#orderChoice,#websiteCheckout{
+position:fixed;inset:0;z-index:9999;background:#09090b;
+display:flex;align-items:center;justify-content:center;padding:20px;
+overflow-y:auto
 }
-
-.admin-card{
-border:1px solid var(--line);
-padding:15px;
-margin:14px 0;
-background:#100c10
+.order-box{
+width:100%;max-width:480px;border:1px solid #742039;
+background:#141116;padding:28px;text-align:center
 }
-
-.owner-link{
-font-size:10px;
-color:#8e7b83;
-letter-spacing:1px;
-border:1px solid #48202d;
-padding:8px 10px;
-background:#110b0f
+.order-box h2{font:32px Georgia,serif;color:#e6a4b6}
+.order-option{width:100%;padding:17px;margin-top:15px;font-size:13px}
+.order-close{position:absolute;top:18px;right:18px}
+.checkout-box{max-height:94vh;overflow-y:auto;text-align:left}
+.checkout-box h2{text-align:center}
+.checkout-box .eyebrow{text-align:center}
+.checkout-box input[type="radio"]{width:auto;margin-right:8px}
+.payment-choice{
+display:block;padding:15px;margin:12px 0;
+border:1px solid var(--line);background:#100c10;color:#eee
 }
+.checkout-step{margin-top:18px}
+.checkout-step h3{color:#e6a4b6;font:23px Georgia,serif}
+.summary-line{
+display:flex;justify-content:space-between;gap:12px;
+padding:9px 0;border-bottom:1px solid var(--line);font-size:13px
+}
+.summary-total{font-size:19px;color:#e0a2b4;margin-top:15px}
+#recaptcha-container{margin:15px 0;display:flex;justify-content:center}
+.checkout-message{margin-top:12px}
 
 @media(max-width:760px){
 nav{gap:12px;font-size:10px}
 .nav{gap:8px}
-.hero{
-grid-template-columns:1fr;
-padding:46px 0
-}
+.hero{grid-template-columns:1fr;padding:46px 0}
 .heroart{height:280px}
-.monogram{
-width:200px;
-height:200px;
-font-size:130px
-}
+.monogram{width:200px;height:200px;font-size:130px}
 .grid{grid-template-columns:repeat(2,1fr)}
 .product img{height:210px}
 .formgrid{grid-template-columns:1fr}
 .wide{grid-column:auto}
 }
-
 @media(max-width:430px){
 nav a:nth-child(2),nav a:nth-child(3){display:none}
 .grid{gap:9px}
@@ -411,92 +183,33 @@ nav a:nth-child(2),nav a:nth-child(3){display:none}
 .pbody h3{font-size:17px}
 .pactions{flex-direction:column}
 .heading h2{font-size:32px}
-.logo{
-font-size:21px;
-letter-spacing:5px
+.logo{font-size:21px;letter-spacing:5px}
+.order-box{padding:22px}
 }
-}
-
 @media(prefers-reduced-motion:reduce){
-*,*:before,*:after{
-animation:none!important;
-transition:none!important
+*,*:before,*:after{animation:none!important;transition:none!important}
 }
-}
-#orderChoice{
-position:fixed;
-inset:0;
-z-index:9999;
-background:#09090b;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:22px;
-}
-
-.order-box{
-width:100%;
-max-width:480px;
-border:1px solid #742039;
-background:#141116;
-padding:30px;
-text-align:center;
-}
-
-.order-box h2{
-font:32px Georgia,serif;
-color:#e6a4b6;
-}
-
-.order-option{
-width:100%;
-padding:17px;
-margin-top:15px;
-font-size:13px;
-}
-
-.order-close{
-position:absolute;
-top:20px;
-right:20px;
-}  
 </style>
 </head>
 
 <body>
 
-<div class="top">
-AUREX · ELITE COLLECTION · THE PREMIUM VIBE
-</div>
+<div class="top">AUREX · ELITE COLLECTION · THE PREMIUM VIBE</div>
 
 <header>
 <div class="wrap nav">
-
-<a class="logo" href="#">
-AUREX
-<small>ELITE COLLECTION</small>
-</a>
-
+<a class="logo" href="#">AUREX<small>ELITE COLLECTION</small></a>
 <nav>
 <a href="#shop">SHOP</a>
 <a href="#policies">POLICIES</a>
 <a href="#contact">CONTACT</a>
 </nav>
-
-<button class="outline" onclick="showCart()">
-CART (<span id="cartCount">0</span>)
-</button>
-
-<button class="owner-link"
-onclick="document.getElementById('ownerLogin').scrollIntoView({behavior:'smooth'})">
-OWNER
-</button>
-
+<button class="outline" onclick="showCart()">CART (<span id="cartCount">0</span>)</button>
+<button class="owner-link" onclick="document.getElementById('ownerLogin').scrollIntoView({behavior:'smooth'})">OWNER</button>
 </div>
 </header>
 
 <main>
-
 <div class="wrap hero">
 <div>
 <div class="eyebrow">ELITE COLLECTION</div>
@@ -504,10 +217,7 @@ OWNER
 <p>Premium accessories selected for a polished everyday look.</p>
 <a class="btn" href="#shop">Shop now</a>
 </div>
-
-<div class="heroart">
-<div class="monogram">A</div>
-</div>
+<div class="heroart"><div class="monogram">A</div></div>
 </div>
 
 <section id="shop">
@@ -517,7 +227,6 @@ OWNER
 <h2>Shop the collection</h2>
 <p>Explore categories and available products.</p>
 </div>
-
 <div class="filters" id="filters"></div>
 <div class="grid" id="products"></div>
 </div>
@@ -529,26 +238,13 @@ OWNER
 <div class="eyebrow">SHOP WITH CONFIDENCE</div>
 <h2>Shipping, returns & support</h2>
 </div>
-
 <div class="panel">
 <h3>Delivery charges</h3>
-<p>
-Up to 80 km: ₹100 · 81–500 km: ₹200 · Above 500 km: ₹250.
-Distance is calculated from Karnal, Haryana.
-Confirm serviceability before dispatch.
-</p>
-
+<p>Up to 80 km: ₹100 · 81–500 km: ₹200 · Above 500 km: ₹250. Distance is calculated from Karnal, Haryana. Final delivery charge will be confirmed before dispatch.</p>
 <h3>Returns & refunds</h3>
-<p>
-Return requests must be raised with AUREX support and approved before shipping.
-Final eligibility and refund terms should be published before accepting live orders.
-</p>
-
+<p>Return requests must be raised with AUREX support and approved before shipping. Final eligibility and refund terms should be confirmed with customer care.</p>
 <h3>Payments</h3>
-<p>
-Cash on Delivery is shown as a demo option.
-Online payments activate only after a secure payment gateway is connected.
-</p>
+<p>Cash on Delivery is available subject to confirmation. Online payment is not active until a secure payment gateway is connected.</p>
 </div>
 </div>
 </section>
@@ -557,41 +253,29 @@ Online payments activate only after a secure payment gateway is connected.
 <div class="wrap heading">
 <div class="eyebrow">AUREX CUSTOMER CARE</div>
 <h2>Need assistance?</h2>
-<p>
-WhatsApp: 9138311341 · Email: aurex.collection.in@gmail.com
-</p>
-<a class="btn" href="https://wa.me/919138311341">
-Chat on WhatsApp
-</a>
+<p>WhatsApp: 9138311341 · Email: aurex.collection.in@gmail.com</p>
+<a class="btn" href="https://wa.me/919138311341">Chat on WhatsApp</a>
 </div>
 </section>
+
 <section id="ownerLogin">
 <div class="wrap">
-
 <div class="heading">
 <div class="eyebrow">PRIVATE STORE CONTROL</div>
 <h2>Owner access</h2>
 <p>Restricted management area</p>
 </div>
-
 <div class="panel">
-
 <div class="notice">
-<b>Important security note:</b>
-This is a browser-only prototype. Its password and saved data are not secure against someone inspecting the website code or browser storage. Do not enter bank passwords, card details, or confidential payment credentials here. Real private owner access requires a server-side login and database.
+<b>Security note:</b> This is a browser-only demo panel. Its password and saved data are not secure. Real private owner access requires server-side authentication and a database.
 </div>
-
 <div style="margin-top:16px">
 <label>Owner password (temporary demo password: AUREXadmin2026)</label>
 <input id="adminPass" type="password" placeholder="Enter owner password">
-
-<button class="btn" style="margin-top:10px" onclick="adminLogin()">
-Unlock owner panel
-</button>
+<button class="btn" style="margin-top:10px" onclick="adminLogin()">Unlock owner panel</button>
 </div>
 
 <div id="adminArea" class="admin hidden">
-
 <div class="admin-card">
 <h3>Store dashboard</h3>
 <div id="dashboard"></div>
@@ -605,63 +289,25 @@ Unlock owner panel
 
 <div class="admin-card">
 <h3>Add a product</h3>
-
 <div class="formgrid">
-
-<label>Product name
-<input id="newName" placeholder="Product name">
-</label>
-
-<label>Category
-<input id="newCategory" placeholder="Watches / Perfumes / Women">
-</label>
-
-<label>Selling price (₹)
-<input id="newPrice" type="number" min="0" placeholder="599">
-</label>
-
-<label>Stock quantity
-<input id="newStock" type="number" min="0" placeholder="10">
-</label>
-
-<label class="wide">Image filename / path
-<input id="newImage" placeholder="product-new.jpg">
-</label>
-
+<label>Product name<input id="newName" placeholder="Product name"></label>
+<label>Category<input id="newCategory" placeholder="Watches / Perfumes / Women"></label>
+<label>Selling price (₹)<input id="newPrice" type="number" min="0" placeholder="599"></label>
+<label>Stock quantity<input id="newStock" type="number" min="0" placeholder="10"></label>
+<label class="wide">Image filename / path<input id="newImage" placeholder="product-new.jpg"></label>
 </div>
-
-<button class="btn" style="margin-top:12px" onclick="addProduct()">
-Add product
-</button>
+<button class="btn" style="margin-top:12px" onclick="addProduct()">Add product</button>
 </div>
 
 <div class="admin-card">
 <h3>Payment settings (display placeholders only)</h3>
-
-<div class="notice">
-These settings are saved only in this browser and are not connected to checkout. Add public merchant UPI details only after a verified business payment setup. Never enter banking passwords, OTPs or card details.
-</div>
-
+<div class="notice">These settings are saved only in this browser and are not connected to checkout. Never enter banking passwords, OTPs or card details.</div>
 <div class="formgrid">
-
-<label>Merchant / display name
-<input id="payName" placeholder="AUREX">
-</label>
-
-<label>Merchant UPI ID
-<input id="payUpi" placeholder="name@bank">
-</label>
-
-<label class="wide">Payment instructions
-<textarea id="payNote" rows="2" placeholder="Payment instructions shown to customers"></textarea>
-</label>
-
+<label>Merchant / display name<input id="payName" placeholder="AUREX"></label>
+<label>Merchant UPI ID<input id="payUpi" placeholder="name@bank"></label>
+<label class="wide">Payment instructions<textarea id="payNote" rows="2" placeholder="Payment instructions"></textarea></label>
 </div>
-
-<button class="btn" style="margin-top:12px" onclick="savePaymentSettings()">
-Save display settings
-</button>
-
+<button class="btn" style="margin-top:12px" onclick="savePaymentSettings()">Save display settings</button>
 <p id="paySaved" class="stock"></p>
 </div>
 
@@ -669,60 +315,108 @@ Save display settings
 <h3>Demo order records</h3>
 <div id="orders"></div>
 </div>
-
 </div>
 </div>
 </div>
 </section>
-
 </main>
 
 <footer class="wrap">
-
-<div>
-<strong style="color:#e0a2b4;letter-spacing:5px">AUREX</strong>
-<br>ELITE COLLECTION
-<br>THE PREMIUM VIBE
-</div>
-
+<div><strong style="color:#e0a2b4;letter-spacing:5px">AUREX</strong><br>ELITE COLLECTION<br>THE PREMIUM VIBE</div>
 <div>Instagram: @AUREX.collection.in</div>
 <div>© 2026 AUREX</div>
-
 </footer>
 
 <div class="cartbar">
-<button class="btn" onclick="showCart()">
-VIEW CART · <span id="cartCount2">0</span>
-</button>
+<button class="btn" onclick="showCart()">VIEW CART · <span id="cartCount2">0</span></button>
 </div>
+
+<!-- ORDER METHOD WINDOW -->
 <div id="orderChoice" class="hidden">
-
 <button class="outline order-close" onclick="closeOrder()">CLOSE ✕</button>
-
 <div class="order-box">
-
 <div class="eyebrow">AUREX · ELITE COLLECTION</div>
-
 <h2>Choose Your Order Method</h2>
-
 <p id="orderProduct"></p>
 <p id="orderPrice" class="price"></p>
-
-<button id="whatsappOrder" class="btn order-option">
-ORDER ON WHATSAPP
-</button>
-
-<button class="outline order-option"
-onclick="alert('Website ordering with OTP verification is coming soon.')">
-ORDER ON WEBSITE
-</button>
-
+<button id="whatsappOrder" class="btn order-option">ORDER ON WHATSAPP</button>
+<button class="outline order-option" onclick="startWebsiteOrder()">ORDER ON WEBSITE</button>
 <p class="stock">THE PREMIUM VIBE</p>
+</div>
+</div>
 
+<!-- WEBSITE CHECKOUT WINDOW -->
+<div id="websiteCheckout" class="hidden">
+<div class="order-box checkout-box">
+<button class="outline" onclick="closeWebsiteCheckout()">CLOSE ✕</button>
+<div class="eyebrow">AUREX · ELITE COLLECTION</div>
+<h2>Secure Checkout</h2>
+
+<div id="stepPhone" class="checkout-step">
+<h3>1. Mobile Verification</h3>
+<p class="stock">Enter your mobile number to receive an OTP.</p>
+<label>Mobile number with country code</label>
+<input id="customerPhone" type="tel" placeholder="+919876543210">
+<div id="recaptcha-container"></div>
+<button class="btn order-option" onclick="sendOTP()">SEND OTP</button>
+</div>
+
+<div id="stepOTP" class="checkout-step hidden">
+<h3>2. Verify OTP</h3>
+<label>Enter the OTP received on your phone</label>
+<input id="customerOTP" type="text" inputmode="numeric" maxlength="6" placeholder="Enter OTP">
+<button class="btn order-option" onclick="verifyOTP()">VERIFY OTP</button>
+</div>
+
+<div id="stepPayment" class="checkout-step hidden">
+<h3>3. Select Payment Type</h3>
+<label class="payment-choice">
+<input type="radio" name="paymentType" value="COD">
+<strong>Cash on Delivery</strong>
+<br><small>Pay when your order is delivered.</small>
+</label>
+<label class="payment-choice">
+<input type="radio" name="paymentType" value="Online">
+<strong>Online Payment</strong>
+<br><small>Payment gateway setup is pending. Payment will not be collected here yet.</small>
+</label>
+<button class="btn order-option" onclick="goToAddress()">CONTINUE TO ADDRESS</button>
+</div>
+
+<div id="stepAddress" class="checkout-step hidden">
+<h3>4. Delivery Address</h3>
+<label>Full name</label>
+<input id="customerName" placeholder="Customer name">
+<label>House / Street / Area</label>
+<input id="customerHouse" placeholder="Full delivery address">
+<label>City</label>
+<input id="customerCity" placeholder="City">
+<label>State</label>
+<input id="customerState" placeholder="State">
+<label>PIN code</label>
+<input id="customerPin" inputmode="numeric" maxlength="6" placeholder="6-digit PIN code">
+<button class="btn order-option" onclick="showOrderSummary()">REVIEW ORDER</button>
+</div>
+
+<div id="stepSummary" class="checkout-step hidden">
+<h3>5. Order Summary</h3>
+<div id="orderSummary"></div>
+<div class="notice" style="margin-top:15px">
+Delivery charge will be confirmed by AUREX based on the delivery PIN code and distance from Karnal, Haryana.
+</div>
+<button class="btn order-option" onclick="placeWebsiteOrder()">CONFIRM ORDER</button>
+</div>
+
+<p id="checkoutMessage" class="notice checkout-message"></p>
 </div>
 </div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+
 <script>
-
+// PRODUCTS
 const seed=[
 {id:'purse',name:'Ladies Purse',category:'Women',price:599,stock:10,image:'product-purse.jpg'},
 {id:'watch',name:'Premium Watch',category:'Watches',price:2500,stock:10,image:'product-watch.jpg'},
@@ -734,109 +428,92 @@ const seed=[
 
 let products=JSON.parse(localStorage.getItem('aurexProducts')||'null')||seed;
 let cart=[];
+let selectedProduct=null;
+let confirmationResult=null;
+let verifiedPhone='';
+let recaptchaVerifier=null;
 
 const money=n=>'₹'+Number(n).toLocaleString('en-IN');
 
 function save(){
-localStorage.setItem('aurexProducts',JSON.stringify(products))
+localStorage.setItem('aurexProducts',JSON.stringify(products));
 }
 
 function render(){
-
 const cats=['All',...new Set(products.map(p=>p.category))];
-
 document.getElementById('filters').innerHTML=cats.map((c,i)=>
 `<button class="filter ${i===0?'active':''}" onclick="filterProducts('${c.replace(/'/g,"\\'")}',this)">${c}</button>`
 ).join('');
-
-draw(products)
+draw(products);
 }
 
 function draw(items){
-
 document.getElementById('products').innerHTML=items.map(p=>
 `<article class="product">
-
 <img src="${p.image}" alt="${p.name}" onerror="this.style.opacity='.25'">
-
 <div class="pbody">
 <h3>${p.name}</h3>
-
 <div class="price">${money(p.price)}</div>
-
-<div class="stock">
-${p.stock>0?p.stock+' available':'Out of stock'}
-</div>
-
+<div class="stock">${p.stock>0?p.stock+' available':'Out of stock'}</div>
 <div class="pactions">
-
-<button class="btn" ${p.stock<1?'disabled':''} onclick="addCart('${p.id}')">
-Add to cart
-</button>
-
-<button class="outline" ${p.stock<1?'disabled':''} onclick="buyNow('${p.id}')">
-Buy now
-</button>
-
+<button class="btn" ${p.stock<1?'disabled':''} onclick="addCart('${p.id}')">Add to cart</button>
+<button class="outline" ${p.stock<1?'disabled':''} onclick="buyNow('${p.id}')">Buy now</button>
 </div>
 </div>
 </article>`
-).join('')
+).join('');
 }
 
 function filterProducts(cat,el){
-
 document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
-
 el.classList.add('active');
-
-draw(cat==='All'?products:products.filter(p=>p.category===cat))
+draw(cat==='All'?products:products.filter(p=>p.category===cat));
 }
 
 function updateCount(){
-
 let n=cart.reduce((s,x)=>s+x.qty,0);
-
 document.getElementById('cartCount').textContent=n;
-document.getElementById('cartCount2').textContent=n
+document.getElementById('cartCount2').textContent=n;
 }
 
 function addCart(id){
-
 let p=products.find(x=>x.id===id);
-
 if(!p||p.stock<1)return alert('Currently out of stock');
-
 let line=cart.find(x=>x.id===id);
-
 if(line){
 if(line.qty>=p.stock)return alert('Stock limit reached');
-line.qty++
+line.qty++;
 }else{
-cart.push({id,qty:1})
+cart.push({id,qty:1});
+}
+updateCount();
 }
 
-updateCount()
+function showCart(){
+if(!cart.length)return alert('Your cart is empty.');
+let lines=cart.map(x=>{
+let p=products.find(y=>y.id===x.id);
+return `${p.name} × ${x.qty} — ${money(p.price*x.qty)}`;
+}).join('\n');
+let total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
+alert('AUREX CART\n\n'+lines+'\n\nSubtotal: '+money(total)+'\n\nTo order an item, use its BUY NOW button.');
 }
 
+// BUY NOW: CHOOSE WHATSAPP OR WEBSITE
 function buyNow(id){
-
 const p=products.find(x=>x.id===id);
 if(!p||p.stock<1)return alert('Out of stock');
 
-const message=`Hello AUREX! I want to order:
-
-Product: ${p.name}
-Price: ${money(p.price)}
-
-Please confirm availability.`;
-
+selectedProduct=p;
 document.getElementById('orderProduct').textContent=p.name;
 document.getElementById('orderPrice').textContent=money(p.price);
 
 document.getElementById('whatsappOrder').onclick=()=>{
-window.location.href=
-'https://wa.me/919138311341?text='+encodeURIComponent(message);
+const message=`Hello AUREX! I want to order:
+Product: ${p.name}
+Price: ${money(p.price)}
+Please confirm availability.`;
+window.location.href='https://wa.me/919138311341?text='+encodeURIComponent(message);
 };
 
 document.getElementById('orderChoice').classList.remove('hidden');
@@ -845,158 +522,231 @@ document.getElementById('orderChoice').classList.remove('hidden');
 function closeOrder(){
 document.getElementById('orderChoice').classList.add('hidden');
 }
-addCart(id);
-showCart()
-}
 
-function showCart(){
-
-if(!cart.length)return alert('Your cart is empty.');
-
-let lines=cart.map(x=>{
-let p=products.find(y=>y.id===x.id);
-return `${p.name} × ${x.qty} — ${money(p.price*x.qty)}`
-}).join('\n');
-
-let total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
-
-if(confirm('AUREX CART\n\n'+lines+'\n\nSubtotal: '+money(total)+'\n\nContinue to checkout?')){
-checkout()
-}
-}
-
-function checkout(){
-
-const name=prompt('Customer name');
-if(!name)return;
-
-const phone=prompt('Mobile number');
-if(!phone)return;
-
-const address=prompt('Full delivery address with PIN code');
-if(!address)return;
-
-const pay=prompt('Payment method: COD','COD');
-if(!pay)return;
-
-const subtotal=cart.reduce((s,x)=>
-s+products.find(p=>p.id===x.id).price*x.qty,0);
-
-const distance=Number(prompt('Distance from Karnal in km','50'));
-
-const shipping=distance<=80?100:distance<=500?200:250;
-
-const total=subtotal+shipping;
-
-const items=cart.map(x=>{
-const p=products.find(y=>y.id===x.id);
-return `${p.name} x ${x.qty} = ${money(p.price*x.qty)}`;
-}).join('\n');
-
-const message=
-`NEW AUREX ORDER
-Customer: ${name}
-Mobile: ${phone}
-Address: ${address}
-Products:
-${items}
-Subtotal: ${money(subtotal)}
-Delivery: ${money(shipping)}
-Total: ${money(total)}
-Payment: ${pay}`;
-
-window.open(
-'https://wa.me/919138311341?text='+encodeURIComponent(message),
-'_blank'
-);
-
-}
-
-const name=prompt('Customer name');
-if(!name)return;
-
-const phone=prompt('Mobile number');
-if(!phone)return;
-
-const address=prompt('Full delivery address with PIN code');
-if(!address)return;
-
-const pay=prompt('Demo payment method: type COD','COD');
-if(!pay)return;
-
-const subtotal=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
-
-const distance=Number(prompt('Approx. distance from Karnal in km (confirm later)','50'));
-
-const shipping=distance<=80?100:distance<=500?200:250;
-
-const order={
-id:'AX'+Date.now(),
-name,
-phone,
-address,
-payment:pay.toUpperCase(),
-subtotal,
-shipping,
-total:subtotal+shipping,
-items:cart.map(x=>({...x})),
-status:'New'
+// FIREBASE CONFIGURATION
+const firebaseConfig={
+apiKey:"AIzaSyAX6MJPFV2Qu_8PbneVcssyTWBTSzZP9co",
+authDomain:"aurex-elite-collection.firebaseapp.com",
+projectId:"aurex-elite-collection",
+storageBucket:"aurex-elite-collection.firebasestorage.app",
+messagingSenderId:"975450446026",
+appId:"1:975450446026:web:8f5451c042a09f88173c33",
+measurementId:"G-7Q812WH0ZS"
 };
 
-let orders=JSON.parse(localStorage.getItem('aurexDemoOrders')||'[]');
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth();
 
-orders.unshift(order);
+function startWebsiteOrder(){
+if(!selectedProduct)return;
 
-localStorage.setItem('aurexDemoOrders',JSON.stringify(orders));
+closeOrder();
+document.getElementById('websiteCheckout').classList.remove('hidden');
 
-alert('Demo order saved only in this browser: '+order.id+'\nTotal '+money(order.total)+'\nNot a live order.');
+['stepPhone','stepOTP','stepPayment','stepAddress','stepSummary'].forEach(id=>{
+document.getElementById(id).classList.add('hidden');
+});
 
-cart=[];
-
-updateCount()
+document.getElementById('stepPhone').classList.remove('hidden');
+document.getElementById('checkoutMessage').textContent='';
+document.getElementById('customerPhone').value='';
+document.getElementById('customerOTP').value='';
+document.querySelectorAll('input[name="paymentType"]').forEach(x=>x.checked=false);
 }
 
-function adminLogin(){
+function closeWebsiteCheckout(){
+document.getElementById('websiteCheckout').classList.add('hidden');
+}
 
+function sendOTP(){
+const phone=document.getElementById('customerPhone').value.trim();
+
+if(!/^\+91[6-9]\d{9}$/.test(phone)){
+return alert('Enter a valid Indian mobile number with +91.');
+}
+
+const button=document.querySelector('#stepPhone button');
+button.disabled=true;
+button.textContent='SENDING OTP...';
+
+if(!recaptchaVerifier){
+recaptchaVerifier=new firebase.auth.RecaptchaVerifier('recaptcha-container',{
+size:'normal'
+});
+}
+
+auth.signInWithPhoneNumber(phone,recaptchaVerifier)
+.then(result=>{
+confirmationResult=result;
+document.getElementById('stepPhone').classList.add('hidden');
+document.getElementById('stepOTP').classList.remove('hidden');
+document.getElementById('checkoutMessage').textContent='OTP sent. Please check your phone.';
+})
+.catch(error=>{
+alert('OTP could not be sent: '+error.message);
+if(recaptchaVerifier){
+recaptchaVerifier.clear();
+recaptchaVerifier=null;
+}
+})
+.finally(()=>{
+button.disabled=false;
+button.textContent='SEND OTP';
+});
+}
+
+function verifyOTP(){
+const otp=document.getElementById('customerOTP').value.trim();
+
+if(!/^\d{6}$/.test(otp))return alert('Enter the 6-digit OTP.');
+
+if(!confirmationResult)return alert('Please request an OTP first.');
+
+confirmationResult.confirm(otp)
+.then(result=>{
+verifiedPhone=result.user.phoneNumber;
+document.getElementById('stepOTP').classList.add('hidden');
+document.getElementById('stepPayment').classList.remove('hidden');
+document.getElementById('checkoutMessage').textContent='Mobile number verified successfully.';
+})
+.catch(()=>{
+alert('Incorrect OTP. Please try again.');
+});
+}
+
+// PAYMENT TYPE COMES BEFORE ADDRESS
+function goToAddress(){
+const payment=document.querySelector('input[name="paymentType"]:checked');
+
+if(!payment)return alert('Please select a payment type.');
+
+if(payment.value==='Online'){
+document.getElementById('checkoutMessage').textContent=
+'Online payment gateway is not connected yet. You can continue with payment marked as pending, or select COD.';
+}
+
+document.getElementById('stepPayment').classList.add('hidden');
+document.getElementById('stepAddress').classList.remove('hidden');
+}
+
+// ADDRESS THEN ORDER SUMMARY
+function showOrderSummary(){
+const name=document.getElementById('customerName').value.trim();
+const house=document.getElementById('customerHouse').value.trim();
+const city=document.getElementById('customerCity').value.trim();
+const state=document.getElementById('customerState').value.trim();
+const pin=document.getElementById('customerPin').value.trim();
+
+if(!name||!house||!city||!state||!/^\d{6}$/.test(pin)){
+return alert('Please fill all address details and enter a valid 6-digit PIN code.');
+}
+
+if(!verifiedPhone)return alert('Please verify your mobile number first.');
+if(!selectedProduct)return alert('Please select a product again.');
+
+const payment=document.querySelector('input[name="paymentType"]:checked');
+if(!payment)return alert('Please select payment type.');
+
+const subtotal=Number(selectedProduct.price);
+const summary=document.getElementById('orderSummary');
+
+summary.innerHTML=`
+<div class="summary-line"><span>Product</span><strong>${selectedProduct.name}</strong></div>
+<div class="summary-line"><span>Price</span><strong>${money(subtotal)}</strong></div>
+<div class="summary-line"><span>Delivery</span><strong>To be confirmed</strong></div>
+<div class="summary-line"><span>Payment type</span><strong>${payment.value==='COD'?'Cash on Delivery':'Online – Payment Pending'}</strong></div>
+<div class="summary-line"><span>Verified mobile</span><strong>${verifiedPhone}</strong></div>
+<div class="summary-line"><span>Deliver to</span><strong>${name}, ${house}, ${city}, ${state} - ${pin}</strong></div>
+<div class="summary-total">Subtotal: ${money(subtotal)}</div>
+<p class="stock">Final delivery charge and payable total will be confirmed by AUREX before dispatch.</p>
+`;
+
+document.getElementById('stepAddress').classList.add('hidden');
+document.getElementById('stepSummary').classList.remove('hidden');
+}
+
+// FINAL ORDER MESSAGE
+function placeWebsiteOrder(){
+if(!verifiedPhone)return alert('Mobile verification is required.');
+
+const payment=document.querySelector('input[name="paymentType"]:checked');
+if(!payment)return alert('Please select payment type.');
+
+const p=selectedProduct;
+if(!p||p.stock<1)return alert('Product is currently out of stock.');
+
+const name=document.getElementById('customerName').value.trim();
+const house=document.getElementById('customerHouse').value.trim();
+const city=document.getElementById('customerCity').value.trim();
+const state=document.getElementById('customerState').value.trim();
+const pin=document.getElementById('customerPin').value.trim();
+
+if(!name||!house||!city||!state||!/^\d{6}$/.test(pin)){
+return alert('Please check your delivery address.');
+}
+
+const orderId='AX'+Date.now();
+const paymentText=payment.value==='COD'?'CASH ON DELIVERY':'ONLINE PAYMENT - PENDING';
+
+const message=
+`NEW AUREX WEBSITE ORDER
+Order ID: ${orderId}
+
+Customer: ${name}
+Verified Mobile: ${verifiedPhone}
+
+Delivery Address:
+${house}, ${city}, ${state} - ${pin}
+
+Product: ${p.name}
+Price: ${money(p.price)}
+Delivery: To be confirmed
+Subtotal: ${money(p.price)}
+
+Payment Type: ${paymentText}
+
+Please confirm availability, delivery charge and final payable amount.`;
+
+document.getElementById('checkoutMessage').textContent='Opening WhatsApp to send your order details...';
+
+window.location.href='https://wa.me/919138311341?text='+encodeURIComponent(message);
+}
+
+// OWNER PANEL
+function adminLogin(){
 if(document.getElementById('adminPass').value!=='AUREXadmin2026')
 return alert('Incorrect password');
 
 document.getElementById('adminArea').classList.remove('hidden');
-
 document.getElementById('adminPass').value='';
-
-renderAdmin()
+renderAdmin();
 }
 
 function adminLogout(){
-document.getElementById('adminArea').classList.add('hidden')
+document.getElementById('adminArea').classList.add('hidden');
 }
 
 function renderAdmin(){
-
 renderInventory();
 renderDashboard();
 renderOrders();
 
 let s=JSON.parse(localStorage.getItem('aurexPaymentDisplay')||'{}');
-
 document.getElementById('payName').value=s.name||'';
 document.getElementById('payUpi').value=s.upi||'';
-document.getElementById('payNote').value=s.note||''
+document.getElementById('payNote').value=s.note||'';
 }
 
 function renderDashboard(){
-
 document.getElementById('dashboard').innerHTML=
 `<p>
 Products: <b>${products.length}</b> ·
 Total units in stock: <b>${products.reduce((s,p)=>s+Number(p.stock),0)}</b> ·
 Demo orders: <b>${JSON.parse(localStorage.getItem('aurexDemoOrders')||'[]').length}</b>
-</p>`
+</p>`;
 }
 
 function renderInventory(){
-
 document.getElementById('inventory').innerHTML=
 '<table><tr><th>Product</th><th>Price</th><th>Stock</th><th>Save</th><th>Remove</th></tr>'+
 products.map(p=>
@@ -1007,37 +757,32 @@ products.map(p=>
 <td><button class="tiny" onclick="updateProduct('${p.id}')">Save</button></td>
 <td><button class="tiny" onclick="deleteProduct('${p.id}')">Delete</button></td>
 </tr>`
-).join('')+'</table>'
+).join('')+'</table>';
 }
 
 function updateProduct(id){
-
 let p=products.find(x=>x.id===id);
+if(!p)return;
 
 p.price=Math.max(0,Number(document.getElementById('price-'+id).value));
-
 p.stock=Math.max(0,Number(document.getElementById('stock-'+id).value));
 
 save();
 render();
 renderAdmin();
-
-alert('Product price and stock updated on this browser.')
+alert('Product price and stock updated on this browser.');
 }
 
 function deleteProduct(id){
-
 if(!confirm('Remove this product from this browser store?'))return;
 
 products=products.filter(p=>p.id!==id);
-
 save();
 render();
-renderAdmin()
+renderAdmin();
 }
 
 function addProduct(){
-
 let name=document.getElementById('newName').value.trim();
 let category=document.getElementById('newCategory').value.trim();
 let price=Number(document.getElementById('newPrice').value);
@@ -1047,28 +792,20 @@ let image=document.getElementById('newImage').value.trim();
 if(!name||!category||!image||price<0||!Number.isFinite(price)||stock<0||!Number.isFinite(stock))
 return alert('Please fill all product fields correctly.');
 
-products.push({
-id:'p'+Date.now(),
-name,
-category,
-price,
-stock,
-image
-});
+products.push({id:'p'+Date.now(),name,category,price,stock,image});
 
 save();
 render();
 renderAdmin();
 
-['newName','newCategory','newPrice','newStock','newImage'].forEach(id=>
-document.getElementById(id).value=''
-);
+['newName','newCategory','newPrice','newStock','newImage'].forEach(id=>{
+document.getElementById(id).value='';
+});
 
-alert('Product added in this browser. Upload the image file to GitHub too.')
+alert('Product added in this browser. Upload the image file to GitHub too.');
 }
 
 function savePaymentSettings(){
-
 let s={
 name:document.getElementById('payName').value.trim(),
 upi:document.getElementById('payUpi').value.trim(),
@@ -1076,47 +813,39 @@ note:document.getElementById('payNote').value.trim()
 };
 
 localStorage.setItem('aurexPaymentDisplay',JSON.stringify(s));
-
 document.getElementById('paySaved').textContent=
-'Display settings saved on this browser only. Not connected to checkout.'
+'Display settings saved on this browser only. Not connected to checkout.';
 }
 
 function renderOrders(){
-
 let orders=JSON.parse(localStorage.getItem('aurexDemoOrders')||'[]');
 
 document.getElementById('orders').innerHTML=orders.length?
 orders.map(o=>
 `<div class="admin-card">
 <b>${o.id}</b> · ${o.name} · ${money(o.total)}
-<br>
-<small>${o.phone} · ${o.payment} · ${o.status}</small>
+<br><small>${o.phone} · ${o.payment} · ${o.status}</small>
 <br>
 <button class="tiny" onclick="setOrderStatus('${o.id}','Processing')">Mark processing</button>
 <button class="tiny" onclick="setOrderStatus('${o.id}','Completed')">Mark completed</button>
 </div>`
 ).join(''):
-'<p>No demo orders saved on this browser.</p>'
+'<p>No demo orders saved on this browser.</p>';
 }
 
 function setOrderStatus(id,status){
-
 let orders=JSON.parse(localStorage.getItem('aurexDemoOrders')||'[]');
-
 let o=orders.find(x=>x.id===id);
-
 if(o)o.status=status;
-
 localStorage.setItem('aurexDemoOrders',JSON.stringify(orders));
-
 renderOrders();
-renderDashboard()
+renderDashboard();
 }
 
+// INITIAL LOAD
 render();
 updateCount();
-
 </script>
 
 </body>
-</html> 
+</html>
